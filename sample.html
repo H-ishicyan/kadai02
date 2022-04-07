@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男気じゃんけんアプリ</title>
+    <meta name="description" content="Your Name のPortfolio Siteです。">
+    
+    <meta property="og:title" content="男気じゃんけんアプリ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="images/common/ogimage.png">
+    <meta property="og:site_name" content="Your Name Portfolio Site">
+    <meta property="og:description" content="Your Name のPortfolio Siteです。">
+    
+
+    
+
+    
+
+</head>
+
+</html>
+<body>
+    <header id="header">
+      <h1 class="title">
+        <a href="">
+          <img src="img/ロゴ_kadai1.png" alt="header_logo">
+        </a>
+
+
+
+
+<section id="about">
+
+  <h1>男気じゃんけん</h1>
+  <p>男のための男になる、勇気を出すじゃんけんです。</p>
+
+  </div>
+</section>
+
+<html>
+<head>
+<script>
+  function rock_paper_scissors(myself) {
+    const enemy = Math.floor( Math.random() * 3);
+    const pngList = [
+      {'png':'/img/go.png'},
+      {'png':'/img/choki.png'},
+      {'png':'/img/PAR.png'},
+    ];
+    //勝ち負けの判定機プログラム
+    if (enemy === myself) {
+        result = 'Even';
+    } else if(myself === 0 && enemy === 1) {
+        result = 'Win';
+    } else if(myself === 1 && enemy === 2) {
+        result = 'Win';
+    } else if(myself === 2 && enemy === 0) {
+        result = 'Win';
+    } else {
+        result = 'Lose';
+    }
+
+    document.querySelector('#enemy').src=pngList[enemy];
+    if (!document.querySelector('#result')) {
+      const elemImg = document.createElement("img");
+      elemImg.setAttribute("src", `/img/${result}.png`);
+      elemImg.setAttribute("id",  `result`);
+      const elem = document.getElementById("resultArea");
+      elem.appendChild(elemImg, elem.firstChild);
+    } else {
+      const elemResult = document.getElementById("result");
+      elemResult.setAttribute("src", `/img/${result}.png`);
+    }
+    document.querySelector('#myself').src=pngList[myself];
+  }
+</script>
+</head>
+<body>
+    <p><img id="enemy" src="/img/DFO.png" width="100" height="100"></p>
+    <button onclick="rock_paper_scissors(0);"> グー</button>
+    <button onclick="rock_paper_scissors(1);"> チョキ</button>
+    <button onclick="rock_paper_scissors(2);"> パー</button>
+    <br />
+    <p><img id="myself" src="/img/DFO.png" width="100" height="100"></p>
+    <div id="resultArea"></div>
+</body>
+</html>
